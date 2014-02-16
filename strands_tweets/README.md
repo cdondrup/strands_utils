@@ -41,7 +41,7 @@ or, with easy_install
 ## Tweeting
 
 Run the Strands_tweets node
-```rosrun strands_tweets strands_tweets```
+```rosrun strands_tweets tweet.py```
 
 You can send a tweet by calling the `/strands_tweets/Tweet` service like this:
 
@@ -49,7 +49,15 @@ You can send a tweet by calling the `/strands_tweets/Tweet` service like this:
 
 You can also send a tweet using the `tweet_test` client like this:
 
-```rosrun strands_tweets tweet_test 'Whatever you want to say'```
+```rosrun strands_tweets tweet_test.py 'Whatever you want to say'```
+
+*NEW*
+
+You can tweet using actions too try running:
+
+```rosrun actionlib axclient.py /strands_tweets```
+
+Fill the text field with the text of your tweet and press SEND GOAL
 
 
 

@@ -1,10 +1,16 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(strands_tweets)
+project(odometry_mileage)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
-find_package(catkin REQUIRED COMPONENTS roscpp rospy std_msgs message_generation actionlib actionlib_msgs sensor_msgs)
+find_package(catkin REQUIRED COMPONENTS
+  roscpp
+  std_msgs
+  nav_msgs
+  geometry_msgs
+  strands_datacentre
+)
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
@@ -13,7 +19,7 @@ find_package(catkin REQUIRED COMPONENTS roscpp rospy std_msgs message_generation
 ## Uncomment this if the package has a setup.py. This macro ensures
 ## modules and global scripts declared therein get installed
 ## See http://ros.org/doc/api/catkin/html/user_guide/setup_dot_py.html
-catkin_python_setup()
+# catkin_python_setup()
 
 ################################################
 ## Declare ROS messages, services and actions ##
@@ -47,23 +53,24 @@ catkin_python_setup()
 # )
 
 ## Generate services in the 'srv' folder
- add_service_files(
-   FILES
-   Tweet.srv
- )
-
+# add_service_files(
+#   FILES
+#   Service1.srv
+#   Service2.srv
+# )
 
 ## Generate actions in the 'action' folder
-add_action_files(
-   DIRECTORY action
-   FILES SendTweet.action
-)
+# add_action_files(
+#   FILES
+#   Action1.action
+#   Action2.action
+# )
 
 ## Generate added messages and services with any dependencies listed here
- generate_messages(
-   DEPENDENCIES
-   std_msgs actionlib_msgs sensor_msgs
- )
+# generate_messages(
+#   DEPENDENCIES
+#   std_msgs
+# )
 
 ###################################
 ## catkin specific configuration ##
@@ -76,9 +83,9 @@ add_action_files(
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
 #  INCLUDE_DIRS include
-#  LIBRARIES strands_tweets
-#  CATKIN_DEPENDS other_catkin_pkg
-  DEPENDS actionlib_msgs
+#  LIBRARIES odometry_mileage
+#  CATKIN_DEPENDS roscpp std_msgs tf
+#  DEPENDS system_lib
 )
 
 ###########
@@ -88,23 +95,26 @@ catkin_package(
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
 # include_directories(include)
+include_directories(
+  ${catkin_INCLUDE_DIRS}
+)
 
 ## Declare a cpp library
-# add_library(strands_tweets
-#   src/${PROJECT_NAME}/strands_tweets.cpp
+# add_library(odometry_mileage
+#   src/${PROJECT_NAME}/odometry_mileage.cpp
 # )
 
 ## Declare a cpp executable
-# add_executable(strands_tweets_node src/strands_tweets_node.cpp)
+add_executable(odometry_mileage src/odometry_mileage.cpp)
 
 ## Add cmake target dependencies of the executable/library
 ## as an example, message headers may need to be generated before nodes
-# add_dependencies(strands_tweets_node strands_tweets_generate_messages_cpp)
+add_dependencies(odometry_mileage strands_datacentre_generate_messages_cpp)
 
 ## Specify libraries to link a library or executable target against
-# target_link_libraries(strands_tweets_node
-#   ${catkin_LIBRARIES}
-# )
+target_link_libraries(odometry_mileage
+  ${catkin_LIBRARIES}
+)
 
 #############
 ## Install ##
@@ -115,14 +125,13 @@ catkin_package(
 
 ## Mark executable scripts (Python etc.) for installation
 ## in contrast to setup.py, you can choose the destination
-
-install(DIRECTORY scripts/
-        DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
-        USE_SOURCE_PERMISSIONS)
-
+# install(PROGRAMS
+#   scripts/my_python_script
+#   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+# )
 
 ## Mark executables and/or libraries for installation
-# install(TARGETS strands_tweets strands_tweets_node
+# install(TARGETS odometry_mileage odometry_mileage_node
 #   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
 #   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
 #   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
@@ -147,7 +156,7 @@ install(DIRECTORY scripts/
 #############
 
 ## Add gtest based cpp test target and link libraries
-# catkin_add_gtest(${PROJECT_NAME}-test test/test_strands_tweets.cpp)
+# catkin_add_gtest(${PROJECT_NAME}-test test/test_odometry_mileage.cpp)
 # if(TARGET ${PROJECT_NAME}-test)
 #   target_link_libraries(${PROJECT_NAME}-test ${PROJECT_NAME})
 # endif()

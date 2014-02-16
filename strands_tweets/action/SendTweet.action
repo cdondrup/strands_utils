@@ -1,0 +1,9 @@
+#goal definition
+string text
+bool force
+---
+#result definition
+bool success
+---
+#feedback
+string tweet

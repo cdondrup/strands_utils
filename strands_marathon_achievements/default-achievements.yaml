@@ -1,0 +1,42 @@
+        # self.start_time = None
+        # self.start_mileage = 0
+        # self.bumper_hits=[]
+        # self.navigation_fails=[]
+        # self.finish_time = None
+        # self.start_mileage = 0
+        # self.finish_mileage = 0
+        # self.stamped_mileage=[]
+        # self.stamped_battery=[]
+        # self.stamped_charges=[]
+        # self.waypoints_stamps=[]
+        # self.active_point_name = ""
+
+achievements:
+  run_duration: 
+  - {val: 0, achievement: "Let's get cracking"}
+  - {val: 1, achievement: "I've run for an hour"}
+  - {val: 10, achievement: "I've run for ten hours"}
+  - {val: 24, achievement: "I've run for a whole day without a human"}
+  - {val: 48, achievement: "I make that 2 days of autonomous running"}
+  - {val: 72, achievement: "3 days without unasked for human intervention"}
+  - {val: 96, achievement: "4 days. I am probably the winner then"}
+  - {val: 120, achievement: "And the award for unlikely longevity goes to"}
+  distance:
+  - {val: 1000, achievement: "I've run for one kilometre"}
+  - {val: 10000, achievement: "I've now driven ten kilometres. My wheels hurt."}
+  - {val: 50000, achievement: "50 kilometres down. How much futher can I go..."}
+  - {val: 42195, achievement: "I've just completed an actual marathon."}
+  - {val: 100000, achievement: "I've run for one hundred kilometres. Really."}
+  bumper_hits:
+  - {val: 1, achievement: "I've been bumped once"}
+  - {val: 10, achievement: "I've been bumped ten times. Watch out people"}
+  - {val: 50, achievement: "I've been bumped FIFTY times. Are you doing this on purpose"}
+  stamped_charges:
+  - {val: 1, achievement: "I've charged once"}
+  - {val: 3, achievement: "I've charged three times. I get very thirsty"}
+  - {val: 5, achievement: "I've charged five times. Bad carpet?"}
+  waypoints_stamps:
+  - {val: 1, achievement: "I've visited my first waypoint"}
+  - {val: 10, achievement: "I've visited ten waypoints"}
+  - {val: 100, achievement: "I've visited one hundred waypoints. Go me."}
+  - {val: 1000, achievement: "I've visited 1000 waypoints. I can't believe it either."}
