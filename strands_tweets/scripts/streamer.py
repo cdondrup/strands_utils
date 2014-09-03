@@ -6,7 +6,6 @@ from strands_tweets.srv import *
 import rospy
 from twython import Twython, TwythonError
 import scitos_msgs.msg
-import scitos_apps_msgs.msg
 
 from twython import TwythonStreamer
 
@@ -66,12 +65,12 @@ class MyStreamer(TwythonStreamer):
                         if self._at_charger :
                             answer = "@%s yes after a hard patrol run I always come to my station and get some energy" %user
                         else :
-                            answer = "@%s no I am working hard as usual" %user                    
+                            answer = "@%s no I am working hard as usual" %user
                 if not understood :
                     answer = "@%s I still don\'t know what you are talking about, but I will soon" %user
                     print answer
                 twitter.update_status(status=answer)
-                
+
         # Want to disconnect after the first result?
         # self.disconnect()
 
