@@ -3,10 +3,10 @@
 #include <pcl/io/pcd_io.h>
 #include <pcl/filters/voxel_grid.h>
 
-#include "primitive_core.h"
-#include "plane_primitive.h"
-#include "sphere_primitive.h"
-#include "cylinder_primitive.h"
+#include "ransac_primitives/primitive_core.h"
+#include "ransac_primitives/plane_primitive.h"
+#include "ransac_primitives/sphere_primitive.h"
+#include "ransac_primitives/cylinder_primitive.h"
 
 
 #include <pcl/features/normal_3d.h>

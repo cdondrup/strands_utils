@@ -6,10 +6,10 @@
 #include <sensor_msgs/PointCloud2.h>
 #include <pcl_ros/point_cloud.h>
 
-#include "primitive_core.h"
-#include "plane_primitive.h"
-#include "sphere_primitive.h"
-#include "cylinder_primitive.h"
+#include <ransac_primitives/primitive_core.h>
+#include <ransac_primitives/plane_primitive.h>
+#include <ransac_primitives/sphere_primitive.h>
+#include <ransac_primitives/cylinder_primitive.h>
 
 #include "primitive_extraction/Primitive.h"
 #include "primitive_extraction/PrimitiveArray.h"

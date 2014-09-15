@@ -1,4 +1,4 @@
-#include "primitive_core.h"
+#include "ransac_primitives/primitive_core.h"
 #include <pcl/point_types.h>
 
 template class primitive_extractor<pcl::PointXYZRGB>;

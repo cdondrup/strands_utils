@@ -25,10 +25,10 @@ catkin_package(
 )
 
 set(CORE_HEADERS
-include/primitive_params.h
-include/primitive_octree.h include/primitive_octree.hpp
-include/primitive_extractor.h include/primitive_extractor.hpp
-include/primitive_visualizer.h include/primitive_visualizer.hpp)
+include/ransac_primitives/primitive_params.h
+include/ransac_primitives/primitive_octree.h include/ransac_primitives/primitive_octree.hpp
+include/ransac_primitives/primitive_extractor.h include/ransac_primitives/primitive_extractor.hpp
+include/ransac_primitives/primitive_visualizer.h include/ransac_primitives/primitive_visualizer.hpp)
 
 add_library(primitive_core src/primitive_leaf.cpp src/base_primitive.cpp src/primitive_core.cpp ${CORE_HEADERS})
 add_library(primitive_shapes src/plane_primitive.cpp src/sphere_primitive.cpp src/cylinder_primitive.cpp)
@@ -37,3 +37,11 @@ add_executable(test_extraction src/test_extraction.cpp)
 target_link_libraries(primitive_core ${OpenCV_LIBS} ${PCL_LIBRARIES})
 target_link_libraries(primitive_shapes primitive_core)
 target_link_libraries(test_extraction primitive_shapes primitive_core ${PCL_LIBRARIES})
+
+
+# Mark cpp header files for installation
+install(DIRECTORY include/${PROJECT_NAME}/
+  DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
+  FILES_MATCHING PATTERN "*.h*"
+  PATTERN ".svn" EXCLUDE
+)

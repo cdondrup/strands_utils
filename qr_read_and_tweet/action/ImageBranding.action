@@ -1,9 +1,0 @@
-#goal definition
-sensor_msgs/Image photo
----
-#result definition
-bool success
-sensor_msgs/Image branded_image
----
-#feedback
-string progress

@@ -1,4 +1,4 @@
-#include "primitive_leaf.h"
+#include "ransac_primitives/primitive_leaf.h"
 
 #include <algorithm>
 

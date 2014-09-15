@@ -1,4 +1,4 @@
-#include "sphere_primitive.h"
+#include "ransac_primitives/sphere_primitive.h"
 
 #include <iostream> // DEBUG
 #include <Eigen/LU>

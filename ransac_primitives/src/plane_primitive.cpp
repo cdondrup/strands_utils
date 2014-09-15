@@ -1,4 +1,4 @@
-#include "plane_primitive.h"
+#include "ransac_primitives/plane_primitive.h"
 
 #include <iostream> // DEBUG
 #include <opencv2/highgui/highgui.hpp> // DEBUG

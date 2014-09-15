@@ -108,13 +108,12 @@ catkin_package(
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
 # include_directories(include)
+message(${catkin_INCLUDE_DIRS})
 include_directories(
   ${catkin_INCLUDE_DIRS}
 )
 
-# spatial_primitives
-include_directories(/home/nbore/Workspace2/mapping_library/ransac_primitives/src)
-link_directories(/home/nbore/Workspace2/mapping_library/ransac_primitives/lib)
+
 
 ## Declare a cpp library
 # add_library(primitive_extraction
@@ -163,12 +162,7 @@ target_link_libraries(primitives_to_markers
 #   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 # )
 
-## Mark cpp header files for installation
-# install(DIRECTORY include/${PROJECT_NAME}/
-#   DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
-#   FILES_MATCHING PATTERN "*.h"
-#   PATTERN ".svn" EXCLUDE
-# )
+
 
 ## Mark other files for installation (e.g. launch and bag files, etc.)
 # install(FILES

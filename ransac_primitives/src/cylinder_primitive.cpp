@@ -1,4 +1,4 @@
-#include "cylinder_primitive.h"
+#include "ransac_primitives/cylinder_primitive.h"
 
 #include <iostream> // DEBUG
 #include <algorithm>
